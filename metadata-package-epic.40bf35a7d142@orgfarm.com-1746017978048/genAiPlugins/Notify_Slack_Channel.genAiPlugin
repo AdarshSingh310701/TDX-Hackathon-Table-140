@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>This topic is called when there is intent to escalate the case and this sends the message to slack channel</description>
+    <developerName>Notify_Slack_Channel</developerName>
+    <genAiFunctions>
+        <functionName>Send_Slack_Message_To_Channel</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Fetch_Case_Record</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If user provides case number then do not alter case number and take it as it is what user provided and call Fetch_Case_Record_from_Case_Number action and store this case record for next instruction input.</description>
+        <developerName>instruction_ifuserprov0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifuserprov0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If you see any intent/ prompt related to escalation then first check if the case already identified to escalate or not. If not, then ask user to provide case number. If user does not provide then keep asking them to provide.</description>
+        <developerName>instruction_ifyouseean1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifyouseean1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Once case record is identified, fetch the summary of the case and store it for the  action Send_Slack_Message_To_Channel input. Call action Send_Slack_Message_To_Channel and provide case summary as the input</description>
+        <developerName>instruction_oncecasere2</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_oncecasere2</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Notify Slack Channel</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>When user asks to escalate the case then you trigger this topic and follow the topic instructions, you send the message to slack channel along with proper inputs</scope>
+</GenAiPlugin>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>This topic helps sales rep to query his owned cases and to perform actions on the cases assigned to him</description>
+    <developerName>Enquire_Cases_and_Perform_actions</developerName>
+    <genAiFunctions>
+        <functionName>Fetch_User_record_from_Email</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Fetch_Users_Case_Records</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If users says to identify his cases then always ask his name first, until he does not provide the name, keep asking it</description>
+        <developerName>instruction_ifuserssay0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifuserssay0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Once user name is identified then call action Fetch_User_record_from_Email. If user record not found then ask user to provide correct name as there is no user for the name.</description>
+        <developerName>instruction_onceuserna1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_onceuserna1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Once user record is identified then call action Fetch_Users_Case_Records by providing user record if as input</description>
+        <developerName>instruction_onceuserre2</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_onceuserre2</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Enquire Cases and Perform actions</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to find out sales rep owned cases and to perform some actions on the cases</scope>
+</GenAiPlugin>

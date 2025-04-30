@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>This topic connect with Slack agent and resolve customers query. Whenever anything coming from Slack then this topic will run.</description>
+    <developerName>Slack_Agent</developerName>
+    <genAiFunctions>
+        <functionName>Slack__CreateSlackCanvas</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Slack__GetSlackUser</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Slack__SearchSlack</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Slack__SendSlackDirectMessage</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Sales__SendMeetingRequest</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Slack__UpdateSlackCanvas</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>When user says book a meeting in the slack then call action SendMeetingRequest</description>
+        <developerName>instruction_whenusersa0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_whenusersa0</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Slack Agent</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your Job is to connect with customer using slack and resolve their queries coming from slack channel</scope>
+</GenAiPlugin>

@@ -1,0 +1,51 @@
+<template>
+    <lightning-card class="slds-p-around_small" title="Agent AAS">
+
+
+    <div class="slds-m-bottom_xx-small">
+
+        <template if:true={chatHistory.length}>
+            <div class="slds-scrollable_y chat-history-box" style="max-height: 300px;">
+                <template for:each={chatHistory} for:item="chat">
+                    <template if:true={chat.isUser}>
+                            <div key={chat.id} class="chat-row right-align">
+                                <div class="chat-bubble user-message">
+                            <p><strong>{chat.sender}:</strong> {chat.message}</p>
+                        </div>
+                            </div>
+                    </template>
+                    <template if:false={chat.isUser}>
+                            <div key={chat.id} class="chat-row left-align">
+                                
+                                <div class="chat-bubble agent-message">
+                            <p><strong>{chat.sender}:</strong> {chat.message}</p>
+                        </div>
+                            </div>
+                    </template>
+                </template>
+            </div>
+        </template>
+
+
+          <!---- <lightning-input type="text" label="Write Something To Hear It" value={testvalue} onkeypress={handleEnter}></lightning-input>---->
+            
+
+            <!----<lightning-input type="text" label="You Said" value={searchKey}></lightning-input>---->
+
+            <lightning-button icon-name="utility:unmuted" variant="brand" label="Say Something" title="Say Something" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        
+        <lightning-button icon-name="utility:muted" variant="brand" label="Stop" title="Stop" onclick={handleClickToStop} class="slds-m-left_x-small"></lightning-button>
+
+    </div>
+
+        <!-- (Your entire account/contact/lead/opportunity section remains unchanged below) -->
+    <div class="slds-m-top_small slds-card">
+        <div class="exampleHolder" if:true={_showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            </div>
+            
+            <!-- All your original data rendering templates go here -->
+        
+    </div>
+</lightning-card>
+</template>

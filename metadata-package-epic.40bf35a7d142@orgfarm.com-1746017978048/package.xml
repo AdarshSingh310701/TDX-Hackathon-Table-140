@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>GetSlackChannelAction</members>
+        <members>callAgent</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Fetch_Case_Record_from_Case_Number</members>
+        <members>Fetch_User_record_from_Email</members>
+        <members>Fetch_Users_Case_Records</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Agentforce_Service_Agent</members>
+        <name>GenAiPlanner</name>
+    </types>
+    <types>
+        <members>Enquire_Cases_and_Perform_actions</members>
+        <members>Notify_Slack_Channel</members>
+        <members>Slack_Agent</members>
+        <name>GenAiPlugin</name>
+    </types>
+    <types>
+        <members>inputSpeech</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <version>63.0</version>
+</Package>
